@@ -1,0 +1,56 @@
+server:
+  port: 8085
+spring:
+  config:
+    use-legacy-processing: true
+  profiles:
+    include: common
+  datasource:
+    username: root
+    password: Nguyenhuylong@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/graduation_project?useUnicode=yes&characterEncoding=UTF-8
+  jpa:
+    hibernate:
+      show-sql: true
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: longnguyenhuy1402@gmail.com
+    password: ryuszlvxezlsqegt
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-bean-definition-overriding: true
+
+inventory:
+  logs:
+    path: ./logs/development
+
+port-fe: 8080
+
+application:
+  default-password: $2a$12$VDjPUakwg8oMceR4dtvlvOCWrQKZpEnSjNSnN3VSrbLO.Jnq4Ua46 #$2a$12$CVy4btq466w7HPQbLx0eNetqANEt.7aGKsV.WS410qPPYJ0C36jAS #bpwgcdgsvhwqeikj
+  default-password-decode: owaiyvxoemmjxdhi #bpwgcdgsvhwqeikj
+  storage-file:
+    directory: ${EXPORT_REPORT_PATH:/upload/} #/upload/ #
+    font: font/
+  mail:
+    enable: true
+    add-emails-in-to-address: longnguyenhuy1402@gmail.com
+    add-emails-in-cc-address:
+
+
